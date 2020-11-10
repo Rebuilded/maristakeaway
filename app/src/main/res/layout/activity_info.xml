@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Informatie"
+        android:textColor="@color/titleGray"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/back" />
+
+    <TextView
+        android:id="@+id/title_location_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:text="Locatie"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/title_txt"
+        app:layout_constraintTop_toBottomOf="@+id/title_txt" />
+
+    <TextView
+        android:id="@+id/address_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Adres"
+        android:textColor="@color/titleGray"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/title_txt"
+        app:layout_constraintTop_toBottomOf="@+id/title_location_txt" />
+
+    <TextView
+        android:id="@+id/address_info_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="4dp"
+        android:text="Info"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/address_txt"
+        app:layout_constraintTop_toBottomOf="@+id/address_txt" />
+
+    <TextView
+        android:id="@+id/drukte_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Drukte"
+        android:textColor="@color/titleGray"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/address_txt"
+        app:layout_constraintTop_toBottomOf="@+id/address_info_txt" />
+
+    <TextView
+        android:id="@+id/drukte_info_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="4dp"
+        android:text="Info"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/drukte_txt"
+        app:layout_constraintTop_toBottomOf="@+id/drukte_txt" />
+
+    <TextView
+        android:id="@+id/extra_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Extra"
+        android:textColor="@color/titleGray"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/drukte_txt"
+        app:layout_constraintTop_toBottomOf="@+id/drukte_info_txt" />
+
+    <TextView
+        android:id="@+id/extra_info_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="4dp"
+        android:text="Info"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/extra_txt"
+        app:layout_constraintTop_toBottomOf="@+id/extra_txt" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity">
+
+    <TextView
+        android:id="@+id/title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Bestelling"
+        android:textColor="@color/titleGray"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/back" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:width="375sp"
+        android:height="75sp"
+        android:background="@drawable/inlog_button"
+        android:fontFamily="@font/bold"
+        android:text="Bestellen"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/artikel_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Artikelen"
+        android:textColor="@color/titleGray"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/title_txt" />
+
+    <TextView
+        android:id="@+id/broodje_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Broodje Gezond"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/artikel_txt"
+        app:layout_constraintTop_toBottomOf="@+id/artikel_txt" />
+
+    <TextView
+        android:id="@+id/flesje_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Flesje Water"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/broodje_txt"
+        app:layout_constraintTop_toBottomOf="@+id/broodje_txt" />
+
+    <TextView
+        android:id="@+id/broodje_prijs_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="€2,00"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/broodje_txt"
+        app:layout_constraintEnd_toEndOf="@+id/flesje_prijs_txt"
+        app:layout_constraintTop_toTopOf="@+id/broodje_txt" />
+
+    <TextView
+        android:id="@+id/flesje_prijs_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="€0,50"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/flesje_txt"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintTop_toTopOf="@+id/flesje_txt" />
+
+    <TextView
+        android:id="@+id/totaal_prijs_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="€2,50"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totaal_txt"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintTop_toTopOf="@+id/totaal_txt" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flesje_txt"
+        app:srcCompat="@drawable/totaallijn" />
+
+    <TextView
+        android:id="@+id/totaal_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Totaal"
+        android:textColor="@color/titleGray"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:id="@+id/tijdstip_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Afhaaltijdstip"
+        android:textColor="@color/specialGray"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/totaal_txt"
+        app:layout_constraintTop_toBottomOf="@+id/totaal_txt" />
+
+    <TextView
+        android:id="@+id/groep_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Groep"
+        android:textColor="@color/lightGray"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tijdstip_txt"
+        app:layout_constraintTop_toBottomOf="@+id/tijdstip_txt" />
+
+    <Button
+        android:id="@+id/groep_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/klassen_bovenbouw"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groep_txt" />
+
+    <TextView
+        android:id="@+id/pauze_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Pauze"
+        android:textColor="@color/lightGray"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/groep_btn"
+        app:layout_constraintTop_toBottomOf="@+id/groep_btn" />
+
+    <Button
+        android:id="@+id/pauze_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/uren_zes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pauze_txt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

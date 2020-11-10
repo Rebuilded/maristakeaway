@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#0085EC</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="darkMarisBlue">#0085EC</color>
+    <color name="scrollDarkMarisBlue">#900085EC</color>
+    <color name="locationBlue">#990090FF</color>
+    <color name="titleGray">#585858</color>
+    <color name="generalGray">#707070</color>
+    <color name="specialGray">#686868</color>
+    <color name="lightGray">#8A8787</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#A9A9A9</color>
+</resources>
