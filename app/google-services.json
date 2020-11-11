@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:833225997735:android:a824506127fdd828244a82",
+        "mobilesdk_app_id": "1:833225997735:android:bb927cabb37edcdb244a82",
         "android_client_info": {
           "package_name": "nl.mariscollege.maristakeaway"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "833225997735-bn20kvsm60547ofo4g966aevojlmnulv.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "nl.mariscollege.maristakeaway",
-            "certificate_hash": "a69cf9cb2e897934d7509e96753d3e90186f3e17"
-          }
-        },
         {
           "client_id": "833225997735-4uiusac2l0keda0et7nosp8np2sr8lh8.apps.googleusercontent.com",
           "client_type": 3

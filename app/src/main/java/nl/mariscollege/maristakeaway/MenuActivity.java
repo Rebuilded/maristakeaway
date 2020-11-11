@@ -12,30 +12,46 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MenuActivity extends AppCompatActivity {
 
-    private Button back;
-    private Button info;
-    private Button bestellen;
-    private Button broodje;
-    private Button flesje;
-    TextView location;
-    ImageView flag;
-    ImageView bg;
+    private Button back, info, broodje, flesje, bestellen;
+    private FirebaseAuth mAuth;
     String data1;
+    TextView location;
+    ImageView flag, bg;
     boolean selectedBroodje= false;
     boolean selectedFlesje= false;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser == null){
+            goMain();
+        }
+    }
+
+    private void goMain() {
+        Toast.makeText(this,"Alstublieft Inloggen", Toast.LENGTH_SHORT).show();
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        location = findViewById(R.id.location);
         View decorView = getWindow().getDecorView();
+        mAuth = FirebaseAuth.getInstance();
         int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         decorView.setSystemUiVisibility(uiOptions);
+        location = findViewById(R.id.location);
         flag= (ImageView) findViewById(R.id.flag);
         bg= (ImageView) findViewById(R.id.background);
         back= (Button) findViewById(R.id.back);

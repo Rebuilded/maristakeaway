@@ -9,28 +9,41 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class CheckoutActivity extends AppCompatActivity {
 
-    private Button bestellen;
-    private Button back;
-    private Button groep;
-    private Button pauze;
-    private TextView brood_prijs_txt;
-    private TextView brood_txt;
-    private TextView flesje_prijs_txt;
-    private TextView flesje_txt;
-    private TextView totaal_prijs_txt;
+    private Button bestellen, back, groep, pauze;
+    private TextView brood_prijs_txt, brood_txt, flesje_prijs_txt, flesje_txt, totaal_prijs_txt;
+    private FirebaseAuth mAuth;
     String location;
-    Boolean selectedBroodje;
-    Boolean selectedFlesje;
+    Boolean selectedBroodje, selectedFlesje;
     Boolean bovenbouw= true;
     Boolean pauzeRechts= true;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser == null){
+            goMain();
+        }
+    }
+
+    private void goMain() {
+        Toast.makeText(this,"Alstublieft Inloggen", Toast.LENGTH_SHORT).show();
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
         View decorView = getWindow().getDecorView();
+        mAuth = FirebaseAuth.getInstance();
         int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
