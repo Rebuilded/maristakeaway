@@ -11,6 +11,12 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.DateFormat;
+import java.util.Calendar;
+
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -21,6 +27,8 @@ public class CheckoutActivity extends AppCompatActivity {
     Boolean selectedBroodje, selectedFlesje;
     Boolean bovenbouw= true;
     Boolean pauzeRechts= true;
+    DatabaseReference reff;
+    Order order;
 
     @Override
     public void onStart() {
@@ -57,6 +65,7 @@ public class CheckoutActivity extends AppCompatActivity {
         flesje_prijs_txt= (TextView) findViewById(R.id.flesje_prijs_txt);
         flesje_txt= (TextView) findViewById(R.id.flesje_txt);
         totaal_prijs_txt= (TextView) findViewById(R.id.totaal_prijs_txt);
+        order = new Order();
         groep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,6 +129,35 @@ public class CheckoutActivity extends AppCompatActivity {
     }
 
     private void submit() {
+        //Getting the myEmail
+        FirebaseUser user = mAuth.getCurrentUser();
+        String myEmail = user.getEmail();
+        order.setEmail(myEmail);
+        //Getting the items
+        String myItems;
+        if(selectedBroodje == true && selectedFlesje == true)  myItems= "Broodje Gezond en Flesje Water";
+        else if(selectedBroodje == true) myItems= "Broodje Gezond";
+        else myItems = "Flesje Water";
+        order.setItems(myItems);
+        //Getting the break
+        Integer myBreak;
+        if(bovenbouw == true){
+            if(pauzeRechts == true) myBreak = 6;
+            else myBreak = 3;
+        }
+        else{
+            if(pauzeRechts == true) myBreak = 5;
+            else myBreak = 2;
+        }
+        order.setBreak(myBreak);
+        order.setPrice(totaal_prijs_txt.getText().toString());
+        //Getting DeliveryDate
+        Calendar calender = Calendar.getInstance();
+        String myDeliveryDate = DateFormat.getDateInstance(DateFormat.FULL).format(calender.getTime());
+        order.setDeliveryDate(myDeliveryDate);
+        order.setLocation(location);
+        reff.push().setValue(order);
+        Toast.makeText(this, "Uw bestelling is verzonden", Toast.LENGTH_SHORT);
         Intent intent= new Intent(this, ConformationActivity.class);
         startActivity(intent);
     }
@@ -131,6 +169,7 @@ public class CheckoutActivity extends AppCompatActivity {
             selectedFlesje= getIntent().getBooleanExtra("flesje", false);
         }
         else Toast.makeText(this,"De locatie is onduidelijk", Toast.LENGTH_SHORT).show();
+        reff = FirebaseDatabase.getInstance().getReference().child("orders");
     }
 
     private void setData() {
